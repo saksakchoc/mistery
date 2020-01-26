@@ -12,7 +12,7 @@ class InfoView(TemplateView):
     def __init__(self):
         self.params = {
             'title':'Hello',
-            'form': InfoView(),
+            'form': InfoForm(),
             'result': 'None',
         }
     
