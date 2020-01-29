@@ -15,3 +15,8 @@ class InfoForm(forms.Form):
     stuff = forms.ChoiceField(label='stuff', choices=stuffdata)
     card = forms.CharField(label='card')
     content = forms.CharField(label='content')
+
+class PersonForm(forms.Form):
+    person = forms.CharField(label='person')
+class StuffForm(forms.Form):
+    stuff = forms.CharField(label='stuff')
