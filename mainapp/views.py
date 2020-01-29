@@ -67,6 +67,7 @@ class DispView(TemplateView):
         self.params = {
             'title': 'aa'
         }
-
+        persondata = Person.objects.all()
+        stuffdata = Stuff.objects.all()
     def get(self,request):
         return render(request,'mainapp/dispinfo.html', self.params)
