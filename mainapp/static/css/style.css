@@ -6,3 +6,9 @@
     background: skyblue;
     margin: 10px;
 }
+#tbl {
+    width: 100px;
+    height: 40px;
+    background: pink;
+    border: medium solid blue;
+}

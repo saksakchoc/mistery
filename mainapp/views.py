@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 
-
+# 情報登録画面のView
 class InfoView(TemplateView):
     def __init__(self):
         self.params = {
@@ -31,7 +31,7 @@ class InfoView(TemplateView):
         info = Info(person=person,stuff=stuff,card=card,content=content)
         info.save()
         return redirect(to='/mainapp/uploadinfo')
-
+# 登場人物登録画面のView
 class PersonView(TemplateView):
     def __init__(self):
         self.params = {
@@ -46,7 +46,7 @@ class PersonView(TemplateView):
         person = Person(person=person)
         person.save()
         return redirect(to='/mainapp/addperson')
-
+# 証拠品登録画面のView
 class StuffView(TemplateView):
     def __init__(self):
         self.params = {
@@ -61,3 +61,12 @@ class StuffView(TemplateView):
         stuff = Stuff(stuff=stuff)
         stuff.save()
         return redirect(to='/mainapp/addstuff')
+
+class DispView(TemplateView):
+    def __init__(self):
+        self.params = {
+            'title': 'aa'
+        }
+
+    def get(self,request):
+        return render(request,'mainapp/dispinfo.html', self.params)
