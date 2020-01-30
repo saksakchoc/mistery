@@ -8,12 +8,21 @@
 </head>
 <body>
     <!-- テーブルを作成する。行：証拠品の数だけ作成 -->
-    <table class="tbl">
+    <table>
+        {% for person in persondata %}
+            <td>{{stuff.stuff}}</td>
+        {% endfor %}
         {% for stuff in stuffdata %}
             <tr>
                 {% for person in persondata %}
                     <!-- 列：登場人物の数だけ作成 -->
-                    <td></td>
+                    <td class="tbl">
+                        {% for info in infodata %}
+                            {% if info.person == person.person and info.stuff == stuff.stuff %}
+                                {{info.content}}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
                 {% endfor %}
             </tr>
         {% endfor %}
