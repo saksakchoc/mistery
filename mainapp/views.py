@@ -65,7 +65,6 @@ class StuffView(TemplateView):
 class DispView(TemplateView):
     def __init__(self):
         self.params = {
-            'title': 'aa',
             'persondata' : Person.objects.all(),
             'stuffdata' : Stuff.objects.all(),
             'infodata' : Info.objects.all()

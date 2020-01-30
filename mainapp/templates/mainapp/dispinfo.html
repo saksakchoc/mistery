@@ -9,9 +9,11 @@
 <body>
     <!-- テーブルを作成する。行：証拠品の数だけ作成 -->
     <table>
-        {% for person in persondata %}
-            <td>{{stuff.stuff}}</td>
-        {% endfor %}
+        <tr>
+            {% for person in persondata %}
+                <th>{{person.person}}</th>
+            {% endfor %}
+        </tr>
         {% for stuff in stuffdata %}
             <tr>
                 {% for person in persondata %}
