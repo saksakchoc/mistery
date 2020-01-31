@@ -7,24 +7,20 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<a href="{% url 'uploadinfo' %}"><div id="btn_upinfo" class="btn">
+<p><a href="{% url 'uploadinfo' %}">
     情報をアップロード
-</div></a>
-<div id="btn_upimg" class="btn">
+</a></p>
     画像をアップロード
-</div>
-<a href="{% url 'dispinfo' %}"><div id="btn_kikikomi" class="btn">
+    <p><a href="{% url 'dispinfo' %}">
     聞き込み表を見る
-</div></a>
-<div id="btn_twitter" class="btn">
+</a></p>
     画像を見る
-</div>
-<a href="{% url 'addperson' %}"><div id="btn_addperson" class="btn">
+    <p><a href="{% url 'addperson' %}">
     登場人物登録
-</div></a>
-<a href="{% url 'addstuff' %}"><div id="btn_addstuff" class="btn">
+</a></p>
+<p><a href="{% url 'addstuff' %}">
     証拠品登録
-</div></a>
+</a></p>
 </body>
     
 </html>
