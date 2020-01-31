@@ -4,27 +4,27 @@
 <head>
 <meta charset='UTF-8'>
 <title>情報アップロード</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div id="btn_upinfo" class="btn">
-    <a href="{% url 'uploadinfo' %}">情報をアップロード</a>
-</div>
+<a href="{% url 'uploadinfo' %}"><div id="btn_upinfo" class="btn">
+    情報をアップロード
+</div></a>
 <div id="btn_upimg" class="btn">
     画像をアップロード
 </div>
-<div id="btn_kikikomi" class="btn">
-    <a href="{% url 'dispinfo' %}">聞き込み表を見る</a>
-</div>
+<a href="{% url 'dispinfo' %}"><div id="btn_kikikomi" class="btn">
+    聞き込み表を見る
+</div></a>
 <div id="btn_twitter" class="btn">
     画像を見る
 </div>
-<div id="btn_addperson" class="btn">
-    <a href="{% url 'addperson' %}">登場人物登録</a>
-</div>
-<div id="btn_addstuff" class="btn">
-    <a href="{% url 'addstuff' %}">証拠品登録</a>
-</div>
+<a href="{% url 'addperson' %}"><div id="btn_addperson" class="btn">
+    登場人物登録
+</div></a>
+<a href="{% url 'addstuff' %}"><div id="btn_addstuff" class="btn">
+    証拠品登録
+</div></a>
 </body>
     
 </html>

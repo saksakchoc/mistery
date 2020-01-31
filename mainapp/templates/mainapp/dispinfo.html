@@ -4,24 +4,27 @@
 <head>
 <meta charset='UTF-8'>
 <title>情報アップロード</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <!-- テーブルを作成する。行：証拠品の数だけ作成 -->
     <table>
-        <tr>
-            {% for person in persondata %}
-                <th>{{person.person}}</th>
-            {% endfor %}
-        </tr>
-        {% for stuff in stuffdata %}
+        <thead>
             <tr>
                 {% for person in persondata %}
-                    <!-- 列：登場人物の数だけ作成 -->
+                    <th>{{person.person}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        {% for stuff in stuffdata %}
+            <tr>
+                <!-- 列：登場人物の数だけ作成 -->
+                {% for person in persondata %}
                     <td class="tbl">
                         {% for info in infodata %}
                             {% if info.person == person.person and info.stuff == stuff.stuff %}
-                                {{info.content}}
+                                <p class="item">【{{info.stuff}}】</p>
+                                <p class="content">{{info.content}}</p>
                             {% endif %}
                         {% endfor %}
                     </td>
