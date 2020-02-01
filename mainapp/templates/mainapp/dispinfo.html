@@ -35,7 +35,7 @@
             <!-- モーダルヘッダー -->
             <div class="modal-header">
                 <!-- モーダルタイトル -->
-            <h4 class="modal-title">子ウインドウ : m_01</h4>
+            <h4 class="modal-title">情報を登録</h4>
             <!-- モーダルを閉じる「?」ボタン -->
             <button type="button" class="close" data-dismiss="modal">
                 <span aria-hidden="true">&#215;</span>
@@ -45,20 +45,12 @@
             <!-- モーダルの中身 -->
             <div class="modal-body">
                 <!-- フォームを作成 -->
-            <form>
-            <div class="form-group">
-                <label for="recipient-name" class="control-label">氏名 :</label>
-                <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-                <label for="recipient-name" class="control-label">メールアドレス :</label>
-                <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-                <label for="message-text" class="control-label">問い合わせ内容 :</label>
-                <textarea class="form-control" id="message-text"></textarea>
-            </div>
-            </form>
+                <form action="{% url 'dispinfo' %}" method="post">
+                    {% csrf_token %}
+                    {{ form | linebreaksbr }}
+                    <br>
+                    <input type="submit" value="登録" name="btn">
+                </form>
             <!-- フォーム : 終 -->
             </div>
             <!-- モーダルの中身 : 終 -->
@@ -71,7 +63,7 @@
         </div> 
     </div>
     <!-- テーブルを作成する。行：証拠品の数だけ作成 -->
-    <table>
+    <table id="infotable">
         <thead>
             <tr>
                 {% for person in persondata %}
@@ -79,23 +71,28 @@
                 {% endfor %}
             </tr>
         </thead>
-        {% for stuff in stuffdata %}
-            <tr>
-                <!-- 列：登場人物の数だけ作成 -->
-                {% for person in persondata %}
-                    <td class="tbl">
-                        {% for info in infodata %}
-                            {% if info.person == person.person and info.stuff == stuff.stuff %}
-                                <p class="item">【{{info.stuff}}】</p>
-                                <p class="content">{{info.content}}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </td>
-                {% endfor %}
-            </tr>
-        {% endfor %}
+        <tbody>
+            {% for stuff in stuffdata %}
+                <tr>
+                    <!-- 列：登場人物の数だけ作成 -->
+                    {% for person in persondata %}
+                        <td class="tbl">
+                            <p class="item">【{{stuff.stuff}}】</p>
+                            {% for info in infodata %}
+                                {% if info.person == person.person and info.stuff == stuff.stuff %}
+                                    <p class="content">{{info.content}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
+    <p class="center"><a href="{% url 'index' %}">
+        戻る
+    </a></p>
 
 </body>
     
