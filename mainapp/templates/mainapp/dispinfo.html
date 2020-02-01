@@ -3,10 +3,73 @@
 <html lang="ja">
 <head>
 <meta charset='UTF-8'>
-<title>情報アップロード</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>情報アップロード</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+    <!-- BootstrapのJS読み込み -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="content">
+        <div class="b_content" >
+          <h2 class="t_b" data-toggle="modal" data-target="#modal1" >
+          <a href="#" class="link_b" name="con" id="fab"><i class="fa fa-share">＋</i></a></h2>
+        </div>
+    </div>
+    <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" 
+                                                data-show="true" data-keyboard="true" data-backdrop="static">   
+        <!-- modal-dialog-centered : 垂直に中央表示   -->
+        <!-- .modal-dialog-scrollable : スクロールを可能にする -->
+        <!-- モーダルが表示された際のコンテンツをclass = "modal-dialog"内に記述 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <!-- class="modal-content"の中に具体的な内容を記述 -->
+            <div class="modal-content">
+            <!-- モーダルヘッダー -->
+            <div class="modal-header">
+                <!-- モーダルタイトル -->
+            <h4 class="modal-title">子ウインドウ : m_01</h4>
+            <!-- モーダルを閉じる「?」ボタン -->
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&#215;</span>
+            </button>
+            <!-- 「?」: 終 -->
+            </div>
+            <!-- モーダルの中身 -->
+            <div class="modal-body">
+                <!-- フォームを作成 -->
+            <form>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label">氏名 :</label>
+                <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label">メールアドレス :</label>
+                <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="control-label">問い合わせ内容 :</label>
+                <textarea class="form-control" id="message-text"></textarea>
+            </div>
+            </form>
+            <!-- フォーム : 終 -->
+            </div>
+            <!-- モーダルの中身 : 終 -->
+            <div class="modal-footer">
+            <!-- モーダルを閉じるボタン -->
+                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+            <!-- 終 -->
+            </div>
+            </div> 
+        </div> 
+    </div>
     <!-- テーブルを作成する。行：証拠品の数だけ作成 -->
     <table>
         <thead>
