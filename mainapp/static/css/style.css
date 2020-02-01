@@ -8,6 +8,9 @@ body {
 /* table {
     display: inline-block;
 } */
+th {
+    width: 200px;
+}
 td {
     width: 200px;
     height: 100px;
@@ -17,6 +20,7 @@ td {
 }
 thead, tbody {
     display: block;
+
   }
 thead {
     height: 50px;
@@ -28,7 +32,8 @@ tbody {
     /* height: calc(100%-50px); */
 }
 #infotable {
-    table-layout:fixed;
+    table-layout: fixed;
+    width: 500px;
 }
 #id_content{
     width: 280px;
