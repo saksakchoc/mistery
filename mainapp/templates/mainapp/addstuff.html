@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>証拠品登録</title>
+</head>
+<body>
+    <form action="{% url 'addstuff' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="登録" name="btn">
+    </form>
+</body>
+    
+</html>

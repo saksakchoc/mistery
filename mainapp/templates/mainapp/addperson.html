@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>情報アップロード</title>
+<title>登場人物登録</title>
 </head>
 <body>
-    <form action="{% url 'uploadinfo' %}" method="post">
+    <form action="{% url 'addperson' %}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="登録" name="btn">
