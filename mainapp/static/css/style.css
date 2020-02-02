@@ -5,9 +5,6 @@ body {
 body {
 	font: 10px sans-serif;
 }
-/* table {
-    display: inline-block;
-} */
 th {
     width: 200px;
 }
@@ -56,8 +53,8 @@ a:active {
 }
 #fab {/*円の部分*/
     display: block;
-    width: 56px;/*幅*/
-    height: 56px;/*高さ*/
+    width: 40px;/*幅*/
+    height: 40px;/*高さ*/
     background: #eeece9;/*背景色*/
     text-align: center;/*中央寄せ*/
     border-radius: 50%;/*角丸く*/
@@ -77,7 +74,7 @@ a:active {
 }
 
  #fab i {/*中央のアイコン*/
-  line-height: 56px;/*＝幅と高さ*/
+  line-height: 40px;/*＝幅と高さ*/
 }
 .center {
     text-align: center;
